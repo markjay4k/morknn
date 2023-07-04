@@ -1,6 +1,7 @@
 # Morknn
 
-A deep learning library written _mostly_ from scratch.
+A deep learning library written _mostly_ from scratch with the goal of using
+only the Python standard library, numpy, and CUDA.
 
 ## Current Status
 
