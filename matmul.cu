@@ -4,6 +4,11 @@
 extern "C" {
     __global__ void matrixMultiplication(float* A, float* B, float* C, int N, int O, int M)
     {
+        /*
+           Matrix A is shape (NxO)
+           Matrix B is shape (OxM)
+           Matrix C will be shape (NxM)
+        */
         int row = blockIdx.y * blockDim.y + threadIdx.y;
         int col = blockIdx.x * blockDim.x + threadIdx.x;
     
