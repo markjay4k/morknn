@@ -1,8 +1,8 @@
-__pycache__
+__pycache__/**
 .ipynb_checkpoints/**
+datasets/**
 venv/**
 tester.ipynb
 mnist.ipynb
 matplotlib_themes.py
-datasets/**
 
