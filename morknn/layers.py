@@ -1,4 +1,5 @@
 import numpy as np
+from morknn.activators import Activator
 
 
 class Layer():
