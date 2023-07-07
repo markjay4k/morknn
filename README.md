@@ -3,10 +3,33 @@
 A deep learning library written _mostly_ from scratch with the goal of using
 only the Python standard library, numpy, and CUDA.
 
-## Current Status
+## Current Status (_incomplete_)
 
 `matmul.so` is a shared object that can do matrix multiplication using a single
 GPU
+
+## Install
+
+1. Install Nvidia driver
+2. Install a compatible version of CUDA toolkit
+3. Install CUDNN
+4. clone repo and run `make` to build the shared objects
+
+```shell
+    git clone https://github.com/markjay4k/morknn
+    cd morknn
+    make
+```
+
+5. Create a python virtual environment
+
+```shell
+    python3 -m venv venv
+    source venv/bin/activate
+    pip install -r requirements.txt
+```
+
+## examples
 
 ```python
     import PyInit_matmul as mm
