@@ -16,17 +16,17 @@ GPU
 4. clone repo and run `make` to build the shared objects
 
 ```shell
-    git clone https://github.com/markjay4k/morknn
-    cd morknn
-    make
+        >git clone https://github.com/markjay4k/morknn
+        >cd morknn
+        >make
 ```
 
 5. Create a python virtual environment
 
 ```shell
-    python3 -m venv venv
-    source venv/bin/activate
-    pip install -r requirements.txt
+        >python3 -m venv venv
+        >source venv/bin/activate
+ (venv) >pip install -r requirements.txt
 ```
 
 ## examples
