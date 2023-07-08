@@ -64,7 +64,7 @@ if __name__ == '__main__':
     print(result_np)
 
 
-    n = 1024 * 16
+    n = 1024 * 2
     A = np.random.rand(n, n).astype(np.float32)
     B = np.random.rand(n, n).astype(np.float32)
     print(f'multiplying {A.shape} by {B.shape} matrices')
