@@ -5,7 +5,6 @@ venv/**
 morknn/__pycache__/**
 morknn/.ipynb_checkpoints/**
 matmul.so
-# tester.ipynb
 mnist.ipynb
 matplotlib_themes.py
 

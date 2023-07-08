@@ -38,6 +38,8 @@ def matmulcuda(A, B):
 
 
 if __name__ == '__main__':
+    
+    import time
     A = np.array([
         [1, 2, 3],
         [4, 5, 6]
@@ -50,12 +52,33 @@ if __name__ == '__main__':
     ]).astype(np.float32)
     
     print(f'multiplying {A.shape} by {B.shape} matrices')
-    result = matmulcuda(A, B)
-    print(result)
 
-    n = 1024
+    starttime = time.monotonic()
+    result_cuda = matmulcuda(A, B)
+    print(f'\nCUDA time: {time.monotonic() - starttime:.6f}s\n')
+    print(result_cuda)
+
+    starttime = time.monotonic()
+    result_np = np.matmul(A, B)
+    print(f'\nnumpy time: {time.monotonic() - starttime:.6f}s\n')
+    print(result_np)
+
+
+    n = 1024 * 16
     A = np.random.rand(n, n).astype(np.float32)
     B = np.random.rand(n, n).astype(np.float32)
     print(f'multiplying {A.shape} by {B.shape} matrices')
-    result = matmulcuda(A, B)
-    print(result)
+   
+    starttime = time.monotonic()
+    for _ in range(10):
+        result_cuda = matmulcuda(A, B)
+    print(f'\nCUDA time: {time.monotonic() - starttime:.6f}s\n')
+    print(result_cuda)
+
+    starttime = time.monotonic()
+    for _ in range(10):
+        result_np = np.matmul(A, B)
+    print(f'\nnumpy time: {time.monotonic() - starttime:.6f}s\n')
+    print(result_np)
+
+

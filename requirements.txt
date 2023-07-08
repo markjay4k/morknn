@@ -1,0 +1,5 @@
+jupyterlab==3.6.5
+jupyterlab-simpledark==1.0.0
+matplotlib==3.7.2
+numpy==1.25.0
+pandas==2.0.3
