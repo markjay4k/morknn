@@ -6,7 +6,7 @@ only the Python standard library, numpy, and CUDA.
 ## Current Status (_incomplete_)
 
 `matmul.so` is a shared object that can do matrix multiplication using a single
-GPU
+GPU. Currently, `matmul.so` performs worse than `numpy.matmul`.
 
 ## Install
 
