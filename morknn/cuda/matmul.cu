@@ -38,7 +38,7 @@ extern "C" {
         cudaMemcpy(d_B, h_B, O * M * sizeof(float), cudaMemcpyHostToDevice);
     
         // Define grid and block dimensions
-        dim3 blockSize(16, 16);
+        dim3 blockSize(32, 32);
         dim3 gridSize((M + blockSize.x - 1) / blockSize.x, (N + blockSize.y - 1) / blockSize.y);
     
         // Launch kernel for matrix multiplication

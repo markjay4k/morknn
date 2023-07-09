@@ -27,11 +27,11 @@ class Layer():
         self.activation = self._activator(**kw)
         
     def _weights(self):
-        shape = (self.input_dim, self.output_dim)
+        shape = (self.output_dim, self.input_dim)
         return np.random.uniform(self.lo, self.hi, shape).astype(self.dtype)
 
     def _bias(self):
-        shape = (self.input_dim, 1)
+        shape = (self.output_dim, 1)
         return np.random.uniform(self.lo, self.hi, shape).astype(self.dtype)
     
     def _activator(self, **kw):

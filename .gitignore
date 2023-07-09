@@ -7,5 +7,5 @@ morknn/.ipynb_checkpoints/**
 matmul.so
 mnist.ipynb
 matplotlib_themes.py
-basic_examples.ipynb
+#basic_examples.ipynb
 

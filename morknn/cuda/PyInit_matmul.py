@@ -63,20 +63,20 @@ if __name__ == '__main__':
     print(f'\nnumpy time: {time.monotonic() - starttime:.6f}s\n')
     print(result_np)
 
-
-    n = 1024 * 2
+    n_loops = 10000
+    n = 512
     A = np.random.rand(n, n).astype(np.float32)
     B = np.random.rand(n, n).astype(np.float32)
     print(f'multiplying {A.shape} by {B.shape} matrices')
    
     starttime = time.monotonic()
-    for _ in range(10):
+    for _ in range(n_loops):
         result_cuda = matmulcuda(A, B)
     print(f'\nCUDA time: {time.monotonic() - starttime:.6f}s\n')
     print(result_cuda)
 
     starttime = time.monotonic()
-    for _ in range(10):
+    for _ in range(n_loops):
         result_np = np.matmul(A, B)
     print(f'\nnumpy time: {time.monotonic() - starttime:.6f}s\n')
     print(result_np)
