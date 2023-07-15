@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 
 
-def mnist_dataset(split_factor=0.05, verbose=False, transpose_x=True):
+def mnist_dataset(split_factor=0.05, verbose=False):
     """
         reads the mnist dataset and returns training and validation data
         
@@ -26,16 +26,9 @@ def mnist_dataset(split_factor=0.05, verbose=False, transpose_x=True):
     val_x = data_x[:split_index, :]
     train_y = data_y[split_index:]
     val_y = data_y[:split_index]
-    train_x = train_x.reshape(*train_x.shape, 1)
-    train_y = train_y.reshape(*train_y.shape, 1)
-    val_x = val_x.reshape(1, *val_x.shape)
-    val_y = val_y.reshape(1, *val_y.shape)
     if verbose:
-        print(f'train_x shape = {train_x.shape}')
-        print(f'train_y shape = {train_y.shape}')
-        print(f'  val_x shape = {val_x.shape}')
-        print(f'  val_x shape = {val_y.shape}')
-    if transpose_x:
-        train_x = train_x.transpose()
-        val_x = val_x.transpose()
+        print(f'   train_x shape = {train_x.shape}')
+        print(f'   train_y shape = {train_y.shape}')
+        print(f'     val_x shape = {val_x.shape}')
+        print(f'     val_y shape = {val_y.shape}')
     return train_x, train_y, val_x, val_y
