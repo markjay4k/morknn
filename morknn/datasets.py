@@ -27,7 +27,9 @@ def mnist_dataset(split_factor=0.05, verbose=False, transpose_x=True):
     train_y = data_y[split_index:]
     val_y = data_y[:split_index]
     train_x = train_x.reshape(*train_x.shape, 1)
-    val_x = val_x.reshape(*val_x.shape, 1)
+    train_y = train_y.reshape(*train_y.shape, 1)
+    val_x = val_x.reshape(1, *val_x.shape)
+    val_y = val_y.reshape(1, *val_y.shape)
     if verbose:
         print(f'train_x shape = {train_x.shape}')
         print(f'train_y shape = {train_y.shape}')

@@ -27,10 +27,18 @@ class Activator:
         return 1 / (1 + np.exp(-z))
 
     def d_sigmoid(self, z):
-        return sigmoid(z) * (1 - sigmoid(z))
+        return self.sigmoid(z) * (1 - self.sigmoid(z))
 
     def softmax(self, z):
         return np.exp(z) / sum(np.exp(z))
+    
+    def d_softmax(self, z):
+        return self.softmax(z) * (1 - self.softmax(z))
+    
+    def d_general(self, z):
+        """general way to compute derivative"""
+        step = (z.max() - z.min()) / (z.size - 1)
+        return np.gradient(self.activation(z), step)
     
     def _act(self):
         
@@ -56,10 +64,7 @@ class Activator:
         if self.activation == self.sigmoid:
             return self.d_sigmoid
         if self.activation == self.softmax:
-            # TODO: add derivative of softmax so it can be used like other layers
-            #       Need to figure out how to deal with the derivative when it's
-            #       the output layer
-            return None
+            return self.d_softmax
         else:
             raise ValueError(f'activation {self.name} not implemented')
             
